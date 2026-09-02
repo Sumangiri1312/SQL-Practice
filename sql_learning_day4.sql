@@ -9,7 +9,7 @@ SELECT * FROM suman_db.membership t1
 INNER JOIN suman_db.users1 t2
 ON t1.user_id = t2.user_id;
 
--- LEFT JOIN 
+--  LEFT JOIN 
 SELECT * FROM suman_db.membership t1
 LEFT JOIN suman_db.users1 t2
 ON t1.user_id = t2.user_id;
