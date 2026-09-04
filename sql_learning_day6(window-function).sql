@@ -1,5 +1,32 @@
 -- WINDOW FUNCTIONS
 
+
+CREATE TABLE marks (
+ student_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255),
+    branch VARCHAR(255),
+    marks INTEGER
+);
+
+INSERT INTO marks (name,branch,marks)VALUES 
+('Nitish','EEE',82),
+('Rishabh','EEE',91),
+('Anukant','EEE',69),
+('Rupesh','EEE',55),
+('Shubham','CSE',78),
+('Ved','CSE',43),
+('Deepak','CSE',98),
+('Arpan','CSE',95),
+('Vinay','ECE',95),
+('Ankit','ECE',88),
+('Anand','ECE',81),
+('Rohit','ECE',95),
+('Prashant','MECH',75),
+('Amit','MECH',69),
+('Sunny','MECH',39),
+('Gautam','MECH',51);
+ 
+
 -- Aggregate Function with OVER()
 SELECT *, AVG(marks) OVER(PARTITION BY branch) AS 'avg_branch_marks' FROM marks;
 
@@ -40,13 +67,10 @@ WHERE t.rank < 3;
 -- • ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW - means that the
 -- frame includes all rows from the beginning of the partition up to and including the
 -- current row.
-
 -- • ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING: the frame includes the
 -- current row and the row immediately before and after it.
-
 -- • ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING: the
 -- frame includes all rows in the partition.
-
 -- • ROWS BETWEEN 3 PRECEDING AND 2 FOLLOWING: the frame includes the
 -- current row and the three rows before it and the two rows after it.
 
