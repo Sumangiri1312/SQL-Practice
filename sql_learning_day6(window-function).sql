@@ -112,3 +112,11 @@ SELECT MONTHNAME(date), SUM(amount),
 FROM orders1
 GROUP BY MONTH(date), MONTHNAME(date);
 
+
+-- SOME OTHER WINDOW FUNCTIONS
+-- top 5 batsman from each team
+SELECT * FROM (SELECT batter, BattingTeam, SUM(batsman_run),RANK() OVER(PARTITION BY BattingTeam ORDER BY SUM(batsman_run) DESC) AS 'rank' FROM ipl
+GROUP BY batter, BattingTeam) t
+WHERE t.rank<6
+
+
