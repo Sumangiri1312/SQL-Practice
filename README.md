@@ -100,10 +100,10 @@ This repository contains my SQL learning journey, practice queries, and exercise
 * Date and time functions
 * Numeric functions
 
-### 13. CTEs & Views
+### 13. CTEs 
 
 * Common Table Expressions (`WITH`)
-* Creating and using Views
+
 
 ---
 
